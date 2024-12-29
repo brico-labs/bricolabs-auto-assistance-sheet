@@ -1,0 +1,36 @@
+html {
+    font-family: 'DM Sans', 'Arial', sans-serif;
+    font-size: 14px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.day-header, .day-cell {
+    width:2rem;
+}
+
+.nick-header, .nick-cell{
+    width: 10%;
+}
+.name-header, .name-cell {
+    width: 10%;
+    text-overflow: ellipsis;
+
+}
+.surname-header, .surname-cell{
+    width: 20%; 
+    text-overflow: clip;
+}
+
+table:nth-child(2) {
+    background-color: blue;
+}
+
+.bricolabs-logo {
+    width: 200px;
+}

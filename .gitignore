@@ -1,0 +1,6 @@
+.node-modules
+package-lock.json
+package.json
+output
+node_modules
+data
