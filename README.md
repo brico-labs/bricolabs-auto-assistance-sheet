@@ -12,7 +12,7 @@ Then clone the repo and:
 $ npm install
 ```
 
-Create a new directory called data/. Currently the code searches for two files: "members.csv" and "honorificMembers.csv". You, as the current secretary, should download two pages as CSVs from the member list spreadsheet and place. This directory is intentionally excluded from the .gitignore and should never be included otherwise.
+Create a new directory called data/. Currently the code searches for two files: "members.csv" and "honorificMembers.csv"*. You, as the current secretary, should download two pages as CSVs from the member list spreadsheet and place. This directory is intentionally excluded from the .gitignore and should never be included otherwise.
 
 ```
 node auto-entry.js
@@ -22,6 +22,6 @@ This will generate a file in the output/ directory which can be served or just o
 
 Will this code get obsoleted out by finer means of access registering? Probably. But it has been fun not needing to use everything and the kitchen sink just to generate HTML based on templates.
 
-- msrl
+-msrl
 
-There's a cleanup function that extracts the necessary data. If tailoring to another org, that's a good starting point.
+*There's a cleanup function that extracts the necessary data. If tailoring to another org, that's a good starting point.
