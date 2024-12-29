@@ -1,5 +1,5 @@
 # bricolabs-auto-assistance-sheet
-This autogenerates a printable webpage that can be used in assistance control. This aids in not having to take hours fiddling with cell styles and 
+This autogenerates a printable webpage that can be used in assistance control. This aids in not having to take hours fiddling with cell styles and such.
 
 It should be noted that code in this repo is non-generic and organization-tailored, which means that a refactor could be useful to genericize it so it can be used by more people. It is quick and dirty code so bear that in mind. Feel free to fork, as always ;)
 
