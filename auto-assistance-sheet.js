@@ -9,8 +9,8 @@ const honorificMembersCsvFilePath = path.join(__dirname, 'data', 'honorificMembe
 const templatePath = path.join(__dirname, 'templates', 'table-template.ejs');
 const outputPath = path.join(__dirname, 'output', 'table.html');
 
-const startDate = '2025-04-01'; 
-const endDate = '2025-06-31';
+const startDate = '2025-01-01'; 
+const endDate = '2025-03-31';
 const assistanceDays = computeAssistanceDays(startDate, endDate);
 
 
@@ -36,6 +36,7 @@ function generateHTMLFromCSV() {
         honorificMembers: honorificMembers,
         months: ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"],
         startingMonthIndex: new Date(startDate).getMonth(),
+        year: new Date(startDate).getFullYear(),
         days: assistanceDays }, (err, html) => {
         if (err) {
           console.error('Error rendering template:', err);
