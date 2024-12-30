@@ -1,7 +1,7 @@
 # bricolabs-auto-assistance-sheet
 Quick and dirty JS scriptfile. This autogenerates a printable webpage that can be used in assistance control. This aids in not having to take hours fiddling with cell styles and counting mondays and fridays.
 
-It should be noted that code in this repo is non-generic and organization-tailored, which means that a refactor could be useful to genericize it so it can be used by more people. It is quick and dirty code so bear that in mind. Feel free to fork, as always ;)
+It should be noted that code in this repo is non-generic and organization-tailored, which means that a refactor could be useful to genericize it so it can be used by more people. It is dirty code so bear that in mind. Feel free to fork, as always ;)
 
 It runs on NodeJS, using EJS templates that output a HTML file.
 
@@ -18,7 +18,7 @@ Set the starting dates on auto-assistance-sheet.js. First day of the month shoul
 
 Then run: 
 ```
-node auto-assistance-sheet.js
+$ node auto-assistance-sheet.js
 ```
 
 This will generate a file in the output/ directory which can be served or just opened via your fav browser, then printed using those weird things called 2D printers.
