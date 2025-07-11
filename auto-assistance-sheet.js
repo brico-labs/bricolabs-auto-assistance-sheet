@@ -9,10 +9,18 @@ const honorificMembersCsvFilePath = path.join(__dirname, 'data', 'honorificMembe
 const templatePath = path.join(__dirname, 'templates', 'table-template.ejs');
 const outputPath = path.join(__dirname, 'output', 'table.html');
 
-const startDate = '2025-01-01'; 
-const endDate = '2025-03-31';
-const assistanceDays = computeAssistanceDays(startDate, endDate);
+let startDate; 
+let endDate;
+try{
+  //yyyy-mm-dd format. Date validation is yet to be implemented
+  startDate = process.argv[2];
+  endDate = process.argv[3];
+}catch(err){
+  console.log("Invalid dates! Please input them in yyyy-mm-dd format")
+  return;
+}
 
+const assistanceDays = computeAssistanceDays(startDate, endDate);
 
 // Read and process CSV, then render HTML
 function generateHTMLFromCSV() {
