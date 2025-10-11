@@ -11,12 +11,17 @@ const outputPath = path.join(__dirname, 'output', 'table.html');
 
 let startDate; 
 let endDate;
+
 try{
   //yyyy-mm-dd format. Date validation is yet to be implemented
   startDate = process.argv[2];
   endDate = process.argv[3];
+  if(startDate == null || endDate == null){
+    printError("There should be two dates.");
+    printUsage();
+  }
 }catch(err){
-  console.log("Invalid dates! Please input them in yyyy-mm-dd format")
+  printError("Invalid dates! Please input them in yyyy-mm-dd format")
   return;
 }
 
@@ -64,9 +69,9 @@ function generateHTMLFromCSV() {
 }
 function extractNames(inputRow){
     return {
-        nickname: inputRow['Apodo:'],
-        name: inputRow['Nombre:'].trim() || null,
-        surname: inputRow['Apellidos:'].trim() || null
+        nickname: inputRow['nickname'],
+        name: inputRow['first_name'].trim() || null,
+        surname: inputRow['last_name'].trim() || null
     }
 }
 
@@ -93,3 +98,10 @@ function computeAssistanceDays(startDate, endDate) {
 
 // Run the function
 generateHTMLFromCSV();
+
+function printError(message){
+  console.log("\x1b[1m\x1b[41m ERROR \x1b[0m "+message);
+}
+function printUsage(){
+  console.log("\n \x1b[1m Correct format is node <auto-assistance-sheet.js> startDate endDate\n (Dates are yyyy-mm-dd)");
+}
