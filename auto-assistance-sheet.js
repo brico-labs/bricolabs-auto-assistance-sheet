@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
 const csv = require('csv-parser');
+const { exit } = require('process');
 
 // Paths
 const membersCsvFilePath = path.join(__dirname, 'data', 'members.csv');
@@ -16,12 +17,18 @@ try{
   //yyyy-mm-dd format. Date validation is yet to be implemented
   startDate = process.argv[2];
   endDate = process.argv[3];
+
   if(startDate == null || endDate == null){
-    printError("There should be two dates.");
-    printUsage();
+    throw("There should be two dates.");
   }
+
+  if( Date.parse(startDate) == NaN || Date.parse(endDate) == NaN){
+    throw("Dates are invalid!");
+  }
+  
 }catch(err){
-  printError("Invalid dates! Please input them in yyyy-mm-dd format")
+  printError(err);
+  printUsage();
   return;
 }
 
